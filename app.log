@@ -1,0 +1,120 @@
+INFO:     Started server process [12539]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.0.253:35816 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.253:35816 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [12539]
+Traceback (most recent call last):
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 291, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '192.168.0.250:3306' (113)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/main.py", line 410, in main
+    run(
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/main.py", line 578, in run
+    server.run()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/config.py", line 473, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/rezuan/Desktop/python-fast-app/main.py", line 3, in <module>
+    from database import search_movies_by_year, upload_movie_data
+  File "/home/rezuan/Desktop/python-fast-app/database.py", line 16, in <module>
+    db_connection = mysql.connector.connect(**db_config)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 120, in __init__
+    self.connect(**kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1181, in connect
+    self._open_connection()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 296, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '192.168.0.250:3306' (113)
+Traceback (most recent call last):
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 291, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '192.168.0.250:3306' (113)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/bin/uvicorn", line 8, in <module>
+    sys.exit(main())
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/main.py", line 410, in main
+    run(
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/main.py", line 578, in run
+    server.run()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/config.py", line 473, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/rezuan/Desktop/python-fast-app/main.py", line 3, in <module>
+    from database import search_movies_by_year, upload_movie_data
+  File "/home/rezuan/Desktop/python-fast-app/database.py", line 16, in <module>
+    db_connection = mysql.connector.connect(**db_config)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 120, in __init__
+    self.connect(**kwargs)
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/abstracts.py", line 1181, in connect
+    self._open_connection()
+  File "/home/rezuan/Desktop/python-app-deployment/python-fast-app/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 296, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '192.168.0.250:3306' (113)
